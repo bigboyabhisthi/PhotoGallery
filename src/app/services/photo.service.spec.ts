@@ -37,4 +37,10 @@ describe('PhotoService', () => {
     const service: PhotoService = TestBed.get(PhotoService);
     expect(service).toBeTruthy();
   });
+
+  it('should be capture the capture the photo', () => {
+    const service: PhotoService = TestBed.get(PhotoService);
+    spyOn(service, 'takePicture').and.callThrough();
+    expect(cameraSpy.getPicture).toHaveBeenCalled();
+  });
 });
